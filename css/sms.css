@@ -1,0 +1,13 @@
+#loading {
+    position: fixed;
+    top: 30%;
+    left: 48%;
+}
+
+#notify {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: auto;
+    z-index: 9999;
+}
