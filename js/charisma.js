@@ -7,7 +7,7 @@ $(document).ready(function () {
     var msie = navigator.userAgent.match(/msie/i);
     $.browser = {};
     $.browser.msie = {};
-    switchTheme(currentTheme);
+    switchTheme('cerulean');
 
     $('.navbar-toggle').click(function (e) {
         e.preventDefault();
@@ -40,8 +40,9 @@ $(document).ready(function () {
         switchTheme(currentTheme);
     });
 
-
+    // TODO theme変更禁止
     function switchTheme(themeName) {
+        themeName = 'cerulean';
         if (themeName == 'classic') {
             $('#bs-css').attr('href', 'bower_components/bootstrap/dist/css/bootstrap.min.css');
         } else {
@@ -166,7 +167,7 @@ function docReady() {
 
     //star rating
     $('.raty').raty({
-        score: 4 //default stars
+        score: 1 //default stars
     });
 
     //uploadify - multiple uploads

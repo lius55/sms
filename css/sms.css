@@ -11,3 +11,9 @@
     width: auto;
     z-index: 9999;
 }
+
+.site-name {
+	color: white;
+	padding-top: 10px;
+	padding-left: 20px;
+}
