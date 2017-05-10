@@ -167,7 +167,7 @@ function docReady() {
 
     //star rating
     $('.raty').raty({
-        score: 1 //default stars
+        score: 0 //default stars
     });
 
     //uploadify - multiple uploads

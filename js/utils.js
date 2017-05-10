@@ -1,6 +1,7 @@
 const apiBaseUrl = 'http://localhost:8888/sms/api/';
 const apiList = {
-    login: apiBaseUrl + 'login.php'
+    login: apiBaseUrl + 'login.php',
+    goodsAdd: apiBaseUrl + 'man/goods-add.php'
 };
 
 const ResponseCode = {

@@ -223,27 +223,27 @@
                     <table>
                         <tr>
                             <td>商品コード</td>
-                            <td><input type="text" class="form-control" id="goods_id" placeholder="1000"></td>
+                            <td><input type="text" class="form-control" id="goods-id" placeholder="1000"></td>
                         </tr>
                         <tr>
                             <td>商品名</td>
-                            <td><input type="text" class="form-control" id="goods_id" placeholder="1000"></td>
+                            <td><input type="text" class="form-control" id="goods-name" placeholder="商品名"></td>
                         </tr>
                         <tr>
                             <td>内容量</td>
-                            <td><input type="text" class="form-control" id="goods_id" placeholder="1000"></td>
+                            <td><input type="text" class="form-control" id="capacity" placeholder="1000"></td>
                         </tr>
                         <tr>
                             <td>定価</td>
-                            <td><input type="text" class="form-control" id="goods_id" placeholder="1000"></td>
+                            <td><input type="text" class="form-control" id="price" placeholder="1000"></td>
                         </tr>
                         <tr>
                             <td>安定的な継続価格（税込）</td>
-                            <td><input type="text" class="form-control" id="goods_id" placeholder="1000"></td>
+                            <td><input type="text" class="form-control" id="long_term_price" placeholder="1000"></td>
                         </tr>
                         <tr>
                             <td>販売元</td>
-                            <td><input type="text" class="form-control" id="goods_id" placeholder="1000"></td>
+                            <td><input type="text" class="form-control" id="publisher" placeholder="xx株式会社"></td>
                         </tr>
                         <tr>
                             <td>商品画像アップロード</td>
@@ -251,39 +251,91 @@
                         </tr>
                         <tr>
                             <td>キャッチ</td>
-                            <td><input type="text" class="form-control" id="goods_id" placeholder="1000"></td>
+                            <td><input type="text" class="form-control" id="catch" placeholder="キャッチ"></td>
+                        </tr>
+                        <tr>
+                            <td>1日あたり</td>
+                            <td><input type="text" class="form-control" id="one_day_price" placeholder="299"></td>
                         </tr>
                         <tr>
                             <td>育毛期待度</td>
-                            <td><div class="raty"></div></td>
+                            <td><div class="raty" id="expect_degree"></div></td>
                         </tr>
                         <tr>
                             <td>注目人気</td>
-                            <td><div class="raty"></div></td>
+                            <td><div class="raty" id="popularity"></div></td>
                         </tr>
                         <tr>
                             <td>コストフォーマンス</td>
-                            <td><div class="raty"></div></td>
+                            <td><div class="raty" id="cost_performence"></div></td>
                         </tr>
                         <tr>
                             <td>男性ホルモン抑制</td>
-                            <td><div class="raty"></div></td>
+                            <td><div class="raty" id="hormone_suppress"></div></td>
                         </tr>
                         <tr>
                             <td>血行促進</td>
-                            <td><div class="raty"></div></td>
+                            <td><div class="raty" id="circulation_prompt"></div></td>
                         </tr>
                         <tr>
                             <td>毛母細胞活性化</td>
-                            <td><div class="raty"></div></td>
+                            <td><div class="raty" id="cell_activation"></div></td>
                         </tr>
                         <tr>
                             <td>バルジ活性化</td>
-                            <td><div class="raty"></div></td>
+                            <td><div class="raty" id="bulge_activation"></div></td>
                         </tr>
                         <tr>
                             <td>成長促進</td>
-                            <td><div class="raty"></div></td>
+                            <td><div class="raty" id="growth_prompt"></div></td>
+                        </tr>
+                        <tr>
+                            <td>効果キャッチ-1</td>
+                            <td><input type="text" class="form-control" id="hair_growth_effect_1"></td>
+                        </tr>
+                        <tr>
+                            <td>育毛効果-1</td>
+                            <td><input type="text" class="form-control" id="hair_growth_effect_1_title"></td>
+                        </tr>
+                        <tr>
+                            <td>効果解説-1</td>
+                            <td><input type="text" class="form-control" id="hair_growth_effect_1_detail"></td>
+                        </tr>
+                        <tr>
+                            <td>効果キャッチ-2</td>
+                            <td><input type="text" class="form-control" id="hair_growth_effect_2"></td>
+                        </tr>
+                        <tr>
+                            <td>育毛効果-2</td>
+                            <td><input type="text" class="form-control" id="hair_growth_effect_2_title"></td>
+                        </tr>
+                        <tr>
+                            <td>効果解説-2</td>
+                            <td><input type="text" class="form-control" id="hair_growth_effect_2_detail"></td>
+                        </tr>
+                        <tr>
+                            <td>おすすめポイント1</td>
+                            <td><input type="text" class="form-control" id="recommend_1"></td>
+                        </tr>
+                        <tr>
+                            <td>おすすめポイント1-解説</td>
+                            <td><input type="text" class="form-control" id="recommend_1_detail"></td>
+                        </tr>
+                        <tr>
+                            <td>おすすめポイント2</td>
+                            <td><input type="text" class="form-control" id="recommend_2"></td>
+                        </tr>                        
+                        <tr>
+                            <td>おすすめポイント2-解説</td>
+                            <td><input type="text" class="form-control" id="recommend_2_detail"></td>
+                        </tr>
+                        <tr>
+                            <td>おすすめポイント3</td>
+                            <td><input type="text" class="form-control" id="recommend_3"></td>
+                        </tr> 
+                        <tr>
+                            <td>おすすめポイント3-解説</td>
+                            <td><input type="text" class="form-control" id="recommend_3_detail"></td>
                         </tr>
                         <tr>
                             <td>
@@ -340,8 +392,7 @@
                             </td>
                         </tr>
                     </table>
-
-                    <a class="btn btn-success" href="#">追加</a>
+                    <a class="btn btn-success" href="#" id="addGoods">追加</a>
                 </div>
             </div>
         </div>
@@ -384,6 +435,8 @@
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
 
+<script src="js/utils.js"></script>
+<script src="js/view/goods-add.js"></script>
 
 </body>
 </html>
