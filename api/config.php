@@ -20,6 +20,7 @@ define('PROCESS_ERROR', 'process error');
 define('RESPONSE_SUCCESS', 'success');
 define('RESPONSE_ERROR', 'error');
 define('INVALID_REQUEST', 'invalid request');
-define('STATUS_REVIEW_OK', 'REVIEW_OK');
+
+define('IMG_BASE_PATH', 'https://www.test/com/img/');
 
 ?>

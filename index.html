@@ -83,7 +83,7 @@
                         <li>
                             <a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-th-list"></i><span> 商品一覧</span></a>
                         </li>
-                        <li><a class="ajax-link" href="ui.html"><i class="glyphicon glyphicon-plus"></i><span> 商品追加</span></a>
+                        <li><a class="ajax-link" href="goods-add.html"><i class="glyphicon glyphicon-plus"></i><span> 商品追加</span></a>
                         </li>
                         
                     </ul>
@@ -106,297 +106,9 @@
         </li>
     </ul>
 
-    <div class="row">
-        <div class="box col-md-12">
-            <div class="box-inner">
-                <div class="box-header well" data-original-title=""></div>
-                <div class="box-content">
-                    <table class="table table-bordered table-striped table-condensed">
-                        <thead>
-                            <tr>
-                                <th>商品コード</th>
-                                <th>商品名</th>
-                                <th>定価</th>
-                                <th>登録日時</th>
-                                <th>アクション</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1001</td>
-                                <td class="center">リアップX5</td>
-                                <td class="center">8979</td>
-                                <td class="center">2017/05/01 15:23:12</td>
-                                <td class="center">
-                                    <a class="btn btn-info" href="#">
-                                        <i class="glyphicon glyphicon-edit icon-white"></i>
-                                        Edit
-                                    </a>
-                                    <a class="btn btn-danger" href="#">
-                                        <i class="glyphicon glyphicon-trash icon-white"></i>
-                                        Delete
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1002</td>
-                                <td class="center">リアップX6</td>
-                                <td class="center">8979</td>
-                                <td class="center">2017/05/01 15:23:12</td>
-                                <td class="center">
-                                    <a class="btn btn-info" href="#">
-                                        <i class="glyphicon glyphicon-edit icon-white"></i>
-                                        Edit
-                                    </a>
-                                    <a class="btn btn-danger" href="#">
-                                        <i class="glyphicon glyphicon-trash icon-white"></i>
-                                        Delete
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1002</td>
-                                <td class="center">リアップX6</td>
-                                <td class="center">8979</td>
-                                <td class="center">2017/05/01 15:23:12</td>
-                                <td class="center">
-                                    <a class="btn btn-info" href="#">
-                                        <i class="glyphicon glyphicon-edit icon-white"></i>
-                                        Edit
-                                    </a>
-                                    <a class="btn btn-danger" href="#">
-                                        <i class="glyphicon glyphicon-trash icon-white"></i>
-                                        Delete
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1002</td>
-                                <td class="center">リアップX6</td>
-                                <td class="center">8979</td>
-                                <td class="center">2017/05/01 15:23:12</td>
-                                <td class="center">
-                                    <a class="btn btn-info" href="#">
-                                        <i class="glyphicon glyphicon-edit icon-white"></i>
-                                        Edit
-                                    </a>
-                                    <a class="btn btn-danger" href="#">
-                                        <i class="glyphicon glyphicon-trash icon-white"></i>
-                                        Delete
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1002</td>
-                                <td class="center">リアップX6</td>
-                                <td class="center">8979</td>
-                                <td class="center">2017/05/01 15:23:12</td>
-                                <td class="center">
-                                    <a class="btn btn-info" href="#">
-                                        <i class="glyphicon glyphicon-edit icon-white"></i>
-                                        Edit
-                                    </a>
-                                    <a class="btn btn-danger" href="#">
-                                        <i class="glyphicon glyphicon-trash icon-white"></i>
-                                        Delete
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <div class="row" id="goodsList"></div><!--/row-->
 
-                    <ul class="pagination pagination-centered">
-                        <li><a href="#">前へ</a></li>
-                        <li><a href="#" class="disable">1/2(合計:30件)</a></li>
-                        <li><a href="#">次へ</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div><!--/row-->
-
-    <div class="row">
-        <div class="box col-md-12">
-            <div class="box-inner">
-                <div class="box-header well" data-original-title=""></div>
-                <div class="box-content">
-                    <table>
-                        <tr>
-                            <td>商品コード</td>
-                            <td><input type="text" class="form-control" id="goods-id" placeholder="1000"></td>
-                        </tr>
-                        <tr>
-                            <td>商品名</td>
-                            <td><input type="text" class="form-control" id="goods-name" placeholder="商品名"></td>
-                        </tr>
-                        <tr>
-                            <td>内容量</td>
-                            <td><input type="text" class="form-control" id="capacity" placeholder="1000"></td>
-                        </tr>
-                        <tr>
-                            <td>定価</td>
-                            <td><input type="text" class="form-control" id="price" placeholder="1000"></td>
-                        </tr>
-                        <tr>
-                            <td>安定的な継続価格（税込）</td>
-                            <td><input type="text" class="form-control" id="long_term_price" placeholder="1000"></td>
-                        </tr>
-                        <tr>
-                            <td>販売元</td>
-                            <td><input type="text" class="form-control" id="publisher" placeholder="xx株式会社"></td>
-                        </tr>
-                        <tr>
-                            <td>商品画像アップロード</td>
-                            <td><input type="file" id="exampleInputFile"></td>
-                        </tr>
-                        <tr>
-                            <td>キャッチ</td>
-                            <td><input type="text" class="form-control" id="catch" placeholder="キャッチ"></td>
-                        </tr>
-                        <tr>
-                            <td>1日あたり</td>
-                            <td><input type="text" class="form-control" id="one_day_price" placeholder="299"></td>
-                        </tr>
-                        <tr>
-                            <td>育毛期待度</td>
-                            <td><div class="raty" id="expect_degree"></div></td>
-                        </tr>
-                        <tr>
-                            <td>注目人気</td>
-                            <td><div class="raty" id="popularity"></div></td>
-                        </tr>
-                        <tr>
-                            <td>コストフォーマンス</td>
-                            <td><div class="raty" id="cost_performence"></div></td>
-                        </tr>
-                        <tr>
-                            <td>男性ホルモン抑制</td>
-                            <td><div class="raty" id="hormone_suppress"></div></td>
-                        </tr>
-                        <tr>
-                            <td>血行促進</td>
-                            <td><div class="raty" id="circulation_prompt"></div></td>
-                        </tr>
-                        <tr>
-                            <td>毛母細胞活性化</td>
-                            <td><div class="raty" id="cell_activation"></div></td>
-                        </tr>
-                        <tr>
-                            <td>バルジ活性化</td>
-                            <td><div class="raty" id="bulge_activation"></div></td>
-                        </tr>
-                        <tr>
-                            <td>成長促進</td>
-                            <td><div class="raty" id="growth_prompt"></div></td>
-                        </tr>
-                        <tr>
-                            <td>効果キャッチ-1</td>
-                            <td><input type="text" class="form-control" id="hair_growth_effect_1"></td>
-                        </tr>
-                        <tr>
-                            <td>育毛効果-1</td>
-                            <td><input type="text" class="form-control" id="hair_growth_effect_1_title"></td>
-                        </tr>
-                        <tr>
-                            <td>効果解説-1</td>
-                            <td><input type="text" class="form-control" id="hair_growth_effect_1_detail"></td>
-                        </tr>
-                        <tr>
-                            <td>効果キャッチ-2</td>
-                            <td><input type="text" class="form-control" id="hair_growth_effect_2"></td>
-                        </tr>
-                        <tr>
-                            <td>育毛効果-2</td>
-                            <td><input type="text" class="form-control" id="hair_growth_effect_2_title"></td>
-                        </tr>
-                        <tr>
-                            <td>効果解説-2</td>
-                            <td><input type="text" class="form-control" id="hair_growth_effect_2_detail"></td>
-                        </tr>
-                        <tr>
-                            <td>おすすめポイント1</td>
-                            <td><input type="text" class="form-control" id="recommend_1"></td>
-                        </tr>
-                        <tr>
-                            <td>おすすめポイント1-解説</td>
-                            <td><input type="text" class="form-control" id="recommend_1_detail"></td>
-                        </tr>
-                        <tr>
-                            <td>おすすめポイント2</td>
-                            <td><input type="text" class="form-control" id="recommend_2"></td>
-                        </tr>                        
-                        <tr>
-                            <td>おすすめポイント2-解説</td>
-                            <td><input type="text" class="form-control" id="recommend_2_detail"></td>
-                        </tr>
-                        <tr>
-                            <td>おすすめポイント3</td>
-                            <td><input type="text" class="form-control" id="recommend_3"></td>
-                        </tr> 
-                        <tr>
-                            <td>おすすめポイント3-解説</td>
-                            <td><input type="text" class="form-control" id="recommend_3_detail"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                口コミ
-                                <a class="btn btn-primary btn-xs" href="#"><i class="glyphicon glyphicon-plus"></i></a>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" id="goods_id" placeholder="1000">
-                                <input type="text" class="form-control" id="goods_id" placeholder="1000">
-                                <input type="text" class="form-control" id="goods_id" placeholder="1000">
-                                <input type="text" class="form-control" id="goods_id" placeholder="1000">
-                                <input type="text" class="form-control" id="goods_id" placeholder="1000">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>成分</td>
-                            <td>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox1" value="option1">
-                                    ミノキシジル
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox1" value="option1">
-                                    ミノキシジル１
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox1" value="option1">
-                                    ミノキシジル２
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox1" value="option1">
-                                    ミノキシジル
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox1" value="option1">
-                                    ミノキシジル
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox1" value="option1">
-                                    ミノキシジル
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox1" value="option1">
-                                    ミノキシジル
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox1" value="option1">
-                                    ミノキシジル
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox1" value="option1">
-                                    ミノキシジル
-                                </label>
-                            </td>
-                        </tr>
-                    </table>
-                    <a class="btn btn-success" href="#" id="addGoods">追加</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="row" id="goodsInfo" style="display: none;"></div>
 </div>
 
 
@@ -434,9 +146,235 @@
 <script src="js/jquery.history.js"></script>
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
+<!-- jquery template -->
+<script src="js/jquery.tmpl.min.js"></script>
 
 <script src="js/utils.js"></script>
-<script src="js/view/goods-add.js"></script>
+<script src="js/view/goods-list.js"></script>
+
+<script type="text/html" id="goodsListTemplate">
+<div class="box col-md-12">
+    <div class="box-inner">
+        <div class="box-header well" data-original-title=""></div>
+        <div class="box-content">
+            <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th>商品コード</th>
+                        <th>商品名</th>
+                        <th>定価</th>
+                        <th>登録日時</th>
+                        <th>アクション</th>
+                    </tr>
+                    {{each goodsList}}
+                     <tr>
+                        <td>${id}</td>
+                        <td class="center">${name}</td>
+                        <td class="center">${price}</td>
+                        <td class="center">${insert_date}</td>
+                        <td class="center">
+                            <a class="btn btn-info edit" href="#" data="${id}">
+                                <i class="glyphicon glyphicon-edit icon-white"></i>
+                                編集
+                            </a>
+                            <a class="btn btn-danger delete" href="#" data="${id}">
+                                <i class="glyphicon glyphicon-trash icon-white"></i>
+                                削除
+                            </a>
+                        </td>
+                    </tr>       
+                    {{/each}}
+                </thead>
+            </table>
+            <div class="col-md-12 center-block">
+                 <ul class="pagination pagination-centered">
+                    {{if pagenum == 0}}
+                    <li class="disabled"><a href="#">前へ</a></li>
+                    {{else}}
+                    <li><a href="#">前へ</a></li>
+                    {{/if}}
+                    <li><a href="#" class="disable">${pagenum+1}/${pageCount}(合計:${count}件)</a></li>
+                    {{if pagenum == pageCount}}
+                    <li class="disabled"><a href="#">次へ</a></li>
+                    {{else}}
+                    <li><a href="#">次へ</a></li>
+                    {{/if}}
+                </ul>   
+            </div>            
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/html" id="goodsInfoTemplate">
+
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title=""></div>
+            <div class="box-content">
+                <form id="goodsImage" enctype="multipart/form-data" method="post">
+                <table>
+                    <tr>
+                        <td>商品コード</td>
+                        <td>
+                            <input type="text" class="form-control" name="goods_id" placeholder="1000" validate="required" value="${id}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>商品名</td>
+                        <td>
+                            <input type="text" class="form-control" name="goods_name" placeholder="商品名" validate="required" value="${name}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>内容量</td>
+                        <td>
+                            <input type="text" class="form-control" name="capacity" placeholder="1000" validate="required" value="${capacity}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>定価</td>
+                        <td>
+                            <input type="text" class="form-control" name="price" placeholder="1000" validate="required" value="${price}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>安定的な継続価格（税込）</td>
+                        <td>
+                            <input type="text" class="form-control" name="long_term_price" placeholder="1000" validate="required"  value="${long_term_price}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>販売元</td>
+                        <td>
+                            <input type="text" class="form-control" name="publisher" placeholder="xx株式会社" validate="required" value="${publisher}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>商品画像アップロード</td>
+                        <td>
+                            <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
+                            <input type="file" name="image" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>キャッチ</td>
+                        <td>
+                            <input type="text" class="form-control" name="catch" placeholder="キャッチ" value="${catch1}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1日あたり</td>
+                        <td>
+                            <input type="text" class="form-control" name="one_day_price" placeholder="299" value="${one_day_price}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>育毛期待度</td>
+                        <td><div class="raty" id="expect_degree"></div></td>
+                    </tr>
+                    <tr>
+                        <td>注目人気</td>
+                        <td><div class="raty" id="popularity"></div></td>
+                    </tr>
+                    <tr>
+                        <td>コストフォーマンス</td>
+                        <td><div class="raty" id="cost_performence"></div></td>
+                    </tr>
+                    <tr>
+                        <td>男性ホルモン抑制</td>
+                        <td><div class="raty" id="hormone_suppress"></div></td>
+                    </tr>
+                    <tr>
+                        <td>血行促進</td>
+                        <td><div class="raty" id="circulation_prompt"></div></td>
+                    </tr>
+                    <tr>
+                        <td>毛母細胞活性化</td>
+                        <td><div class="raty" id="cell_activation"></div></td>
+                    </tr>
+                    <tr>
+                        <td>バルジ活性化</td>
+                        <td><div class="raty" id="bulge_activation"></div></td>
+                    </tr>
+                    <tr>
+                        <td>成長促進</td>
+                        <td><div class="raty" id="growth_prompt"></div></td>
+                    </tr>
+                    <tr>
+                        <td>効果キャッチ-1</td>
+                        <td><input type="text" class="form-control" id="hair_growth_effect_1"></td>
+                    </tr>
+                    <tr>
+                        <td>育毛効果-1</td>
+                        <td><input type="text" class="form-control" id="hair_growth_effect_1_title"></td>
+                    </tr>
+                    <tr>
+                        <td>効果解説-1</td>
+                        <td><input type="text" class="form-control" id="hair_growth_effect_1_detail"></td>
+                    </tr>
+                    <tr>
+                        <td>効果キャッチ-2</td>
+                        <td><input type="text" class="form-control" id="hair_growth_effect_2"></td>
+                    </tr>
+                    <tr>
+                        <td>育毛効果-2</td>
+                        <td><input type="text" class="form-control" id="hair_growth_effect_2_title"></td>
+                    </tr>
+                    <tr>
+                        <td>効果解説-2</td>
+                        <td><input type="text" class="form-control" id="hair_growth_effect_2_detail"></td>
+                    </tr>
+                    <tr>
+                        <td>おすすめポイント1</td>
+                        <td><input type="text" class="form-control" id="recommend_1"></td>
+                    </tr>
+                    <tr>
+                        <td>おすすめポイント1-解説</td>
+                        <td><input type="text" class="form-control" id="recommend_1_detail"></td>
+                    </tr>
+                    <tr>
+                        <td>おすすめポイント2</td>
+                        <td><input type="text" class="form-control" id="recommend_2"></td>
+                    </tr>                        
+                    <tr>
+                        <td>おすすめポイント2-解説</td>
+                        <td><input type="text" class="form-control" id="recommend_2_detail"></td>
+                    </tr>
+                    <tr>
+                        <td>おすすめポイント3</td>
+                        <td><input type="text" class="form-control" id="recommend_3"></td>
+                    </tr> 
+                    <tr>
+                        <td>おすすめポイント3-解説</td>
+                        <td><input type="text" class="form-control" id="recommend_3_detail"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            口コミ
+                            <!-- <a class="btn btn-primary btn-xs" href="#"><i class="glyphicon glyphicon-plus"></i></a> -->
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" name="assess1" placeholder="1000">
+                            <input type="text" class="form-control" name="assess2" placeholder="1000">
+                            <input type="text" class="form-control" name="assess3" placeholder="1000">
+                            <input type="text" class="form-control" name="assess4" placeholder="1000">
+                            <input type="text" class="form-control" name="assess5" placeholder="1000">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>成分</td>
+                        <td id="compList"></td>
+                    </tr>
+                </table>
+                <a class="btn btn-success" href="#" id="addGoods">更新</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>    
+
+</script>
 
 </body>
 </html>

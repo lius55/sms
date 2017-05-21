@@ -1,7 +1,10 @@
 const apiBaseUrl = 'http://localhost:8888/sms/api/';
 const apiList = {
-    login: apiBaseUrl + 'login.php',
-    goodsAdd: apiBaseUrl + 'man/goods-add.php'
+    login:      apiBaseUrl + 'login.php',
+    goodsAdd:   apiBaseUrl + 'man/goods-add.php',
+    goodsList:  apiBaseUrl + 'man/goods-list.php', 
+    goodsInfo:  apiBaseUrl + 'man/goods-info.php',
+    compList:   apiBaseUrl + 'man/comp-list.php'
 };
 
 const ResponseCode = {
@@ -48,6 +51,32 @@ const ajax = function(option) {
         }
     });
 };
+
+/*
+ * ファイルアップロード用
+ * @param option $.ajaxオプション
+ */
+const ajaxUpload = function(option) {
+    $.ajax({
+        type: 'POST',
+        url: option.url,
+        data: option.data,
+        // contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        cache: false,
+        processData: false,
+        success: option.success,
+        error: function(xhr){
+            if (option.error == undefined) {
+                var msg =  (xhr.responseJSON != undefined && xhr.responseJSON.message != undefined) ? 
+                        xhr.responseJSON.message : 'システムエラー発生しました。';
+                notify(NotifyType.Error, msg);
+            } else {
+                return option.error;
+            }
+        }
+    });   
+}
 
 /*
  * Loadingイメージ表示関数
@@ -107,3 +136,94 @@ const notify = function(type, msg) {
     // 5秒後自動的に消します
     setTimeout(clearNotify, 5000);
 }
+
+/*
+ * エラー表示
+ * @param  チェック対象要素リスト
+ * @return true:エラーあり、false:エラーなし
+ */
+var displayError = function(target, msg) {
+    
+    // エラー文言表示ターゲット取得
+    var errorDiv = $(target).parent().find(".error");
+    if (errorDiv.length < 1) {
+        $(target).parent().append("<div class='error'></div>");
+        errorDiv = $(target).parent().find(".error");
+    }
+    $(errorDiv).text(msg);
+
+    if ($(target).prop("tagName") == "INPUT" || $(target).prop("tagName") == "SELECT") {
+        $(target).addClass("input-error");
+    }
+
+    // 再度入力された際に、エラー表示解除
+    $(target).on('change', function() {
+        if ($(target).hasClass('input-error')) {
+            $(target).removeClass('input-error');
+        }
+        if ($(errorDiv).hasClass('error')) {
+            $(errorDiv).text('');
+            $(errorDiv).removeClass('input-error');
+        }
+    });
+    return true;
+}
+
+const ValidateType = {
+    required:    'required'
+};
+
+const validate = function(target) {
+
+    /*
+     * 必須チェック
+     */
+    var required = function(target) {
+        var value = $(target).val();
+        if (isNull(value)) {
+            var errorMsg = 
+                $(target).attr(ValidateType.required + "-msg") ? 
+                    $(target).attr(ValidateType.required + "-msg") : "必須項目";
+            return displayError(target, errorMsg);
+        }
+        return false;
+    };
+
+    // ----------------
+    //    処理開始
+    // ----------------
+    if (target.length < 1) { return false; }
+    var errorFlag = false;
+
+    $.each(target, function(index, element){
+        console.log("value=" + $(this).val() + ",validate=" + $(this).attr("validate"));
+        // 非表示の場合チェックしない
+        if (!$(this).is(":visible")) { return true; }
+        var str = $(this).attr("validate");
+        var value = $(this).val();
+        $.each(str.split(","), function(i, e){
+            switch (e) {
+                case ValidateType.required:
+                    errorFlag = required(element);
+                    break;
+            }
+            // eachループbreak判定
+            if (errorFlag) { return false; }
+        });
+        // eachループbreak判定
+        if (errorFlag) { return false; }
+    });
+    return errorFlag;
+};
+
+/*
+ * Null判定
+ * @return true: null,false: not null
+ */
+const isNull = function(obj) {
+    if (obj == undefined || (obj != undefined && obj.length < 1)) {
+        return true;
+    } else {
+        return false;
+    }
+};

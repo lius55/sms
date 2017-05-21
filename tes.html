@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	    <script src="bower_components/jquery/jquery.min.js"></script>
+</head>
+<body>
+
+<form enctype="multipart/form-data" method="POST" id="upload-form">
+    <!-- MAX_FILE_SIZE は、必ず "file" input フィールドより前になければなりません -->
+    <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
+    <!-- input 要素の name 属性の値が、$_FILES 配列のキーになります -->
+    このファイルをアップロード: <input name="image" type="file" />
+    <input type="button" value="ファイルを送信" id="sb" />
+</form>
+<script type="text/javascript">
+	$("#sb").on("click", function() {
+		$form = $('#upload-form');
+            fd = new FormData($form[0]);
+            $.ajax(
+                {
+                	url: 'http://localhost:8888/sms/api/man/goods-add.php',
+                type: 'post',
+                processData: false,
+                contentType: false,
+                data: fd,
+                dataType: "json",
+                success: function(data) {
+                    alert( data.message );
+                    console.log(data);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    // alert( "ERROR" );
+                    // alert( textStatus );
+                    alert( errorThrown );
+                }
+            });
+	});
+</script>
+</body>
+</html>
